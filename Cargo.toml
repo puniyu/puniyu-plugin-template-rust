@@ -1,0 +1,18 @@
+[package]
+name = "puniyu-plugin-template"
+version = "0.1.0"
+description = "puniyu插件开发模板"
+edition = "2024"
+license = "MIT"
+authors = ["puniyu"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+puniyu_core = { version = "0.5.12" }
+puniyu_plugin = { version = "0.5.12" }
+
+[features]
+default = []
+cdylib = []
