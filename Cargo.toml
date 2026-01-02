@@ -10,8 +10,8 @@ authors = ["puniyu"]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-puniyu_core = { version = "0.5.12" }
-puniyu_plugin = { version = "0.5.12" }
+puniyu_core = { version = "0.6.0" }
+puniyu_plugin = { version = "0.6.0" }
 
 [features]
 default = []
