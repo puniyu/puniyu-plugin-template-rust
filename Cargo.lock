@@ -303,31 +303,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bon"
-version = "3.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ebeb9aaf9329dff6ceb65c689ca3db33dbf15f324909c60e4e5eef5701ce31b1"
-dependencies = [
- "bon-macros",
- "rustversion",
-]
-
-[[package]]
-name = "bon-macros"
-version = "3.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "77e9d642a7e3a318e37c2c9427b5a6a48aa1ad55dcd986f3034ab2239045a645"
-dependencies = [
- "darling 0.21.3",
- "ident_case",
- "prettyplease",
- "proc-macro2",
- "quote",
- "rustversion",
- "syn",
-]
-
-[[package]]
 name = "brotli"
 version = "8.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -572,12 +547,12 @@ dependencies = [
 
 [[package]]
 name = "darling"
-version = "0.21.3"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9cdf337090841a411e2a7f3deb9187445851f91b309c0c0a29e05f74a00a48c0"
+checksum = "25ae13da2f202d56bd7f91c25fba009e7717a1e4a1cc98a76d844b65ae912e9d"
 dependencies = [
- "darling_core 0.21.3",
- "darling_macro 0.21.3",
+ "darling_core 0.23.0",
+ "darling_macro 0.23.0",
 ]
 
 [[package]]
@@ -596,11 +571,10 @@ dependencies = [
 
 [[package]]
 name = "darling_core"
-version = "0.21.3"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1247195ecd7e3c85f83c8d2a366e4210d588e802133e1e355180a9870b517ea4"
+checksum = "9865a50f7c335f53564bb694ef660825eb8610e0a53d3e11bf1b0d3df31e03b0"
 dependencies = [
- "fnv",
  "ident_case",
  "proc-macro2",
  "quote",
@@ -621,11 +595,11 @@ dependencies = [
 
 [[package]]
 name = "darling_macro"
-version = "0.21.3"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d38308df82d1080de0afee5d069fa14b0326a88c14f15c5ccda35b4a6c414c81"
+checksum = "ac3984ec7bd6cfa798e62b4a642426a5be0e68f9401cfc2a01e3fa9ea2fcdb8d"
 dependencies = [
- "darling_core 0.21.3",
+ "darling_core 0.23.0",
  "quote",
  "syn",
 ]
@@ -1767,16 +1741,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "prettyplease"
-version = "0.2.37"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "479ca8adacdd7ce8f1fb39ce9ecccbfe93a3f1344b3d0d97f20bc0196208f62b"
-dependencies = [
- "proc-macro2",
- "syn",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "1.0.103"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1795,12 +1759,13 @@ dependencies = [
 
 [[package]]
 name = "puniyu_command"
-version = "0.7.5"
+version = "0.7.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59b01c7552f0a547f3dccea286dcb4d57f935c5c832b573f2165b0827bc23a13"
+checksum = "59933b4e4f9261be7ec5bff69401a0c76d43d70267cb60afdd80819864b740c1"
 dependencies = [
  "async-trait",
  "clap",
+ "itertools",
  "puniyu_config",
  "puniyu_logger",
  "puniyu_registry",
@@ -1810,9 +1775,9 @@ dependencies = [
 
 [[package]]
 name = "puniyu_common"
-version = "0.7.4"
+version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "650b5ade524c01bd72b0e845cb83f008e737009b27a3cc710967b3612b264ee4"
+checksum = "d5fa85928957e8ae70cdc537bf4a2b6f63e36a42587213eeaf4e5c09a477ea9b"
 dependencies = [
  "serde",
  "strum",
@@ -1822,9 +1787,9 @@ dependencies = [
 
 [[package]]
 name = "puniyu_config"
-version = "0.7.4"
+version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0812eb0111334c12d2daf2ad0fcac5b447859bf6206593fed57892c22985e03b"
+checksum = "99d0b7d1b53afb574e30b77511d2182675cf04fdfae56dec615a9f9fdeb68f38"
 dependencies = [
  "notify-debouncer-full",
  "puniyu_common",
@@ -1836,12 +1801,11 @@ dependencies = [
 
 [[package]]
 name = "puniyu_core"
-version = "0.7.5"
+version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bbc34f5dad88406bb6d9207aa10d5906669cad5c9f9781bff49c4a7936e5a02c"
+checksum = "718ab98744a149d6bd7b264c79f43f4e718ecbdf4d0112a859010776e1fcd22e"
 dependencies = [
  "async-trait",
- "bon",
  "bytes",
  "convert_case",
  "figlet-rs",
@@ -1861,11 +1825,12 @@ dependencies = [
 
 [[package]]
 name = "puniyu_event"
-version = "0.7.5"
+version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fc7213cf7b258058497445b014d84bceeb8cc39eec2de9ca548f352f5bcbd990"
+checksum = "6c62fa8119d7f4252514cff6e276908e57385082abed40479d5d5dff4b653c72"
 dependencies = [
  "puniyu_command",
+ "puniyu_hook",
  "puniyu_logger",
  "puniyu_registry",
  "puniyu_types",
@@ -1873,10 +1838,22 @@ dependencies = [
 ]
 
 [[package]]
-name = "puniyu_library"
-version = "0.5.4"
+name = "puniyu_hook"
+version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0524c7a3cdaf375cbb857fffc789156d497db30ad34fc7e303425f3d8de38fc"
+checksum = "4c793b82479d614e323ae4988fb88502c878d53950d2327e373f0d79aafa7bb7"
+dependencies = [
+ "async-trait",
+ "puniyu_logger",
+ "puniyu_registry",
+ "puniyu_types",
+]
+
+[[package]]
+name = "puniyu_library"
+version = "0.5.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d1d188e06dcfb63253c74756850e18c10d6d8fd5deefad7cc5a8040cd5751e7b"
 dependencies = [
  "libloading 0.9.0",
  "thiserror 2.0.17",
@@ -1902,12 +1879,13 @@ dependencies = [
 
 [[package]]
 name = "puniyu_macros"
-version = "0.7.4"
+version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "679f467f54096add610aada76dcc7344093fc4df15fad0fcb97938a7060d4846"
+checksum = "73ca451f065b492fda758b89b298049f872873b1f6bb925de95f9c52aa7787ee"
 dependencies = [
  "convert_case",
  "croner",
+ "darling 0.23.0",
  "proc-macro2",
  "quote",
  "syn",
@@ -1915,9 +1893,9 @@ dependencies = [
 
 [[package]]
 name = "puniyu_plugin"
-version = "0.7.5"
+version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6749abed46f456366e014c852dbaef3101113da34439032ac014ba56ca69686b"
+checksum = "885ea4eb3788dbab81627f79304c5a015f3c15c683b970f15f27d6e81fcaeda9"
 dependencies = [
  "actix-web",
  "async-trait",
@@ -1934,15 +1912,14 @@ dependencies = [
 
 [[package]]
 name = "puniyu_registry"
-version = "0.7.5"
+version = "0.7.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0a382218d5ff4790bb04403eab0b8be713ffa36f02c2d27d3a38bc12c0a930b0"
+checksum = "e5b4418451763d00c6be56451076316cb397d7a2a362f1ab1e90c4d5595e3820"
 dependencies = [
  "chrono",
  "chrono-tz",
  "convert_case",
  "futures",
- "itertools",
  "puniyu_common",
  "puniyu_config",
  "puniyu_library",
@@ -1957,9 +1934,9 @@ dependencies = [
 
 [[package]]
 name = "puniyu_server"
-version = "0.7.5"
+version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9594f48230243f06d04409fb2ed010395fc29a3b9180f481b575dfd4a00db95c"
+checksum = "9fcda20b4d9c3c8c7191c9f6712a7dd796b00403e4971ad65da99ae67075e805"
 dependencies = [
  "actix-web",
  "bytes",
@@ -1995,9 +1972,9 @@ dependencies = [
 
 [[package]]
 name = "puniyu_types"
-version = "0.7.4"
+version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "591828ebcae927f21228a7c4afed8d41a8be51ee44282787cc1e81a742676f16"
+checksum = "4d7c043145d37b43902b4351bb21179a445a10bc2cef53ce09e3d76f047ec284"
 dependencies = [
  "actix-web",
  "async-trait",
